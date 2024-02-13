@@ -29,61 +29,58 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="w3-colors-flat.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
   </head>
 
   
 
 <!--Javascript code.-->
 <script>
-	var exampleVariable1 = 0;
-	var exampleVariable2 = 0;
-	var exampleVariable3 = 0;
+	var houseplants = [
+  { name: "Snake Plant", type: "Leafy", careLevel: "Low", spaceRequirement: "Moderate", lightLevel: "Low to High", wateringFrequency: "Low" },
+  { name: "Spider Plant", type: "Leafy", careLevel: "Low", spaceRequirement: "Ample", lightLevel: "Low to High", wateringFrequency: "Moderate" },
+  { name: "Peace Lily", type: "Flowering", careLevel: "Moderate", spaceRequirement: "Ample", lightLevel: "Low to Medium", wateringFrequency: "Moderate" },
+  { name: "Succulent", type: "Succulent", careLevel: "Low", spaceRequirement: "Small", lightLevel: "High", wateringFrequency: "Low" },
+  { name: "Pothos", type: "Leafy", careLevel: "Low", spaceRequirement: "Ample", lightLevel: "Low to High", wateringFrequency: "Low" },
+  { name: "ZZ Plant", type: "Leafy", careLevel: "Low", spaceRequirement: "Moderate", lightLevel: "Low to High", wateringFrequency: "Low" },
+  { name: "Aloe Vera", type: "Succulent", careLevel: "Low", spaceRequirement: "Small", lightLevel: "High", wateringFrequency: "Low" },
+  { name: "Monstera", type: "Leafy", careLevel: "Moderate", spaceRequirement: "Ample", lightLevel: "Low to High", wateringFrequency: "Moderate" },
+  { name: "Philodendron", type: "Leafy", careLevel: "Low", spaceRequirement: "Ample", lightLevel: "Low to High", wateringFrequency: "Low" },
+  { name: "Rubber Plant", type: "Leafy", careLevel: "Moderate", spaceRequirement: "Ample", lightLevel: "Medium", wateringFrequency: "Moderate" },
+  { name: "Fiddle Leaf Fig", type: "Leafy", careLevel: "High", spaceRequirement: "Ample", lightLevel: "Medium to High", wateringFrequency: "High" },
+  { name: "English Ivy", type: "Leafy", careLevel: "Moderate", spaceRequirement: "Hanging", lightLevel: "Low to High", wateringFrequency: "Moderate" },
+  { name: "Lucky Bamboo", type: "Aquatic", careLevel: "Low", spaceRequirement: "Small", lightLevel: "Low", wateringFrequency: "Low" },
+  { name: "String of Pearls", type: "Succulent", careLevel: "Low", spaceRequirement: "Hanging", lightLevel: "High", wateringFrequency: "Low" },
+  { name: "African Violet", type: "Flowering", careLevel: "Moderate", spaceRequirement: "Small", lightLevel: "Medium", wateringFrequency: "High" },
+  { name: "Boston Fern", type: "Fern", careLevel: "High", spaceRequirement: "Ample", lightLevel: "Low to Medium", wateringFrequency: "High" },
+  { name: "Calathea", type: "Leafy", careLevel: "High", spaceRequirement: "Ample", lightLevel: "Low to Medium", wateringFrequency: "High" },
+  { name: "Maidenhair Fern", type: "Fern", careLevel: "High", spaceRequirement: "Ample", lightLevel: "Medium", wateringFrequency: "High" },
+  { name: "Chinese Money Plant", type: "Leafy", careLevel: "Moderate", spaceRequirement: "Ample", lightLevel: "Low to High", wateringFrequency: "Low" },
+  { name: "Bird of Paradise", type: "Leafy", careLevel: "High", spaceRequirement: "Ample", lightLevel: "Medium to High", wateringFrequency: "Moderate" },
+  { name: "Jade Plant", type: "Succulent", careLevel: "Low", spaceRequirement: "Small", lightLevel: "High", wateringFrequency: "Low" },
+  { name: "Zebra Plant", type: "Succulent", careLevel: "Low", spaceRequirement: "Small", lightLevel: "High", wateringFrequency: "Low" },
+  { name: "Areca Palm", type: "Palm", careLevel: "Moderate", spaceRequirement: "Ample", lightLevel: "Low to Medium", wateringFrequency: "Moderate" },
+  { name: "Parlor Palm", type: "Palm", careLevel: "Low", spaceRequirement: "Ample", lightLevel: "Low to Medium", wateringFrequency: "Low" },
+  { name: "Dracaena", type: "Leafy", careLevel: "Moderate", spaceRequirement: "Ample", lightLevel: "Low to Medium", wateringFrequency: "Low to Moderate" },
+  { name: "Cactus", type: "Succulent", careLevel: "Low", spaceRequirement: "Small", lightLevel: "High", wateringFrequency: "Low" },
+  { name: "Begonia", type: "Flowering", careLevel: "Low", spaceRequirement: "Small", lightLevel: "Medium", wateringFrequency: "Moderate" },
+  { name: "Dieffenbachia", type: "Leafy", careLevel: "Low", spaceRequirement: "Ample", lightLevel: "Low to Medium", wateringFrequency: "Moderate" },
+  { name: "Swiss Cheese Plant", type: "Leafy", careLevel: "High", spaceRequirement: "Ample", lightLevel: "Low to Medium", wateringFrequency: "High" },
+  { name: "Pilea Peperomioides", type: "Leafy", careLevel: "Low", spaceRequirement: "Ample", lightLevel: "Low to Medium", wateringFrequency: "Moderate" },
+  { name: "Asparagus Fern", type: "Fern", careLevel: "Low", spaceRequirement: "Hanging", lightLevel: "Low to Medium", wateringFrequency: "Moderate" }
+];
+	var typeSelect;
+	var careSelect;
+	var spaceSelect;
+	var lightSelect;
+	var waterSelect;
 	
-	function exampleFunction1()
-	{
-		// Assigns values to existing variables based on user input. The parseFloat() function converts string values to numerical values.
-    		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 + exampleVariable2;
-		
-		alert("You just ran an addition function!");
-		console.log("Addition function was run.");
-	}
-	
-	function exampleFunction2()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 * exampleVariable2;
-		
-		alert("You just ran a multiplication function!");
-		console.log("Multiplication function was run.");
-	}
-	
-	function exampleFunction3()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 ** exampleVariable2;
-		
-		alert("You just ran an exponent function!");
-		console.log("Exponent function was run.");
-	}
-	
-	function exampleResultsFunction()
-	{
-		document.getElementById("endResults").innerHTML = "Your final result is: " + exampleVariable3;
-		resetVariables();
-	}
 	
 	function resetVariables()
 	{
-		exampleVariable1 = 0;
-		exampleVariable2 = 0;
-		exampleVariable3 = 0;
+		
 	}
 </script>
   
@@ -103,13 +100,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     left: -100vw;
     overflow-y: auto;
     z-index: 0;
-    background-color: hsl(0,0%,100%);
+    background-color: hsl(149, 100%, 89%);
+	font-family: "Delicious Handrawn", cursive;
+	font-size: 20px;
 }
 
 .page:target {
     left: 0vw;
     z-index: 1;
 }
+
+
 </style>
 
 
@@ -119,89 +120,228 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <!--Landing page content.-->
   <div id="content" class="w3-container">
   	<!--Header!-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>APP NAME GOES HERE</h1>
+	<div id="header" class="w3-container w3-flat-green-sea">
+		<h1>Plant Pal</h1>
 	</div>
-	
-	  <p>INTRODUCTION/DESCRIPTION OF APP GOES HERE</p>
+	<div id="intro">
+	  <p>Find Your Perfect Houseplant</p>
 	
 	  <a href="#one" class="w3-btn w3-grey w3-round">Get Started!</a>
 	
 	  <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative Maker Space Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the Maker Space Stream, FRI, and The University of Texas system are not liable for anything related to this code. THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION!</p>
   
-  
+	</div>
   
 <!--FIRST SUBPAGE-->
 <div id="one" class="page">
-	<div id="header2" class="w3-container w3-flat-carrot">
+	<div id="header2" class="w3-container w3-flat-green-sea">
 		<h1>Question 1</h1>
 	</div>
 	
   <center>
     
     	<div id="content2" class="w3-container">
-        	<p>QUESTION 1 GOES HERE</p>    
+        	<p>What type of house plant are you looking for?</p>    
     	</div>
 	
 	<!--Form element. This allows for user input in HTML.-->
-	<form>
-		<!--Label for first input field.-->
-		<label for="firstInputBox">Enter a number:</label><br>
-		<!--User input box.-->
-		<input type="number" id="firstInputBox" value="0"><br>
-		<!--Label for second input field.-->
-		<label for="secondInputBox">Enter another number:</label><br>
-		<!--User input box.-->
-		<input type="number" id="secondInputBox" value="0">
-		
-		<br><br><br>
-	</form>
-      
-  <a href="#finalpage" onclick="exampleFunction1();" class="w3-btn w3-grey">Button 1</a>
-  <a href="#finalpage" onclick="exampleFunction2();" class="w3-btn w3-grey">Button 2</a>
-  <a href="#finalpage" onclick="exampleFunction3();" class="w3-btn w3-grey">Button 3</a>
+	<label for="typeSelect">Select Type:</label>
+	<select id="typeSelect">
+	  <option value="leafy">Leafy</option>
+	  <option value="flowering">Flowering</option>
+	  <option value="succulent">Succulent</option>
+	  <option value="aquatic">Aquatic</option>
+	  <option value="fern">Fern</option>
+	  <option value="palm">Palm</option>
+
+	  <!-- Options for each unique type -->
+	</select>
+	<a href="#two" onclick="" class="w3-btn w3-grey">Continue</a>
     
   </center>
 </div>  
   
-  
-  
 
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+<!--TWO SUBPAGE-->
+<div id="two" class="page">
+	<div id="header2" class="w3-container w3-flat-green-sea">
+		<h1>Question 2</h1>
+	</div>
+	
+  <center>
+    
+    	<div id="content2" class="w3-container">
+        	<p>What is your preferred care level for a plant?</p>    
+    	</div>
+	
+	<!--Form element. This allows for user input in HTML.-->
+	<label for="careLevelSelect">Select Care Level:</label>
+	<select id="careLevelSelect">
+		<option value="low">Low</option>
+		<option value="moderate">Moderate</option>
+		<option value="high">High</option>
+
+	  <!-- Options for each unique type -->
+	</select>
+	<a href="#three" onclick="" class="w3-btn w3-grey">Continue</a>
+
+
+  </center>
+</div>
+  
+  
+<!--THREE SUBPAGE-->
+<div id="three" class="page">
+	<div id="header2" class="w3-container w3-flat-green-sea">
+		<h1>Question 3</h1>
+	</div>
+	
+  <center>
+    
+    	<div id="content2" class="w3-container">
+        	<p>What is your preferred space requirment for a plant?</p>    
+    	</div>
+	
+	<!--Form element. This allows for user input in HTML.-->
+	<label for="space">Select Space Requirment:</label>
+	<select id="spaceSelect">
+		<option value="small">Small</option>
+		<option value="moderate">Moderate</option>
+		<option value="ample">Ample</option>
+		<option value="hanging">Hanging</option>
+	  <!-- Options for each unique type -->
+	</select>
+	<a href="#four" onclick="" class="w3-btn w3-grey">Continue</a>
+
+
+  </center>
+</div>
+
+<!--FOUR SUBPAGE-->
+<div id="four" class="page">
+	<div id="header2" class="w3-container w3-flat-green-sea">
+		<h1>Question 4</h1>
+	</div>
+	
+  <center>
+    
+    	<div id="content2" class="w3-container">
+        	<p>What is your preferred light level requirment for a plant?</p>    
+    	</div>
+	
+	<!--Form element. This allows for user input in HTML.-->
+	<label for="lightSelect">Select Space Requirment:</label>
+	<select id="lightSelect">
+		<option value="low">Low</option>
+		<option value="medium">Medium</option>
+		<option value="low to high">Low to High</option>
+		<option value="medium to high">Medium to High</option>
+	  <!-- Options for each unique type -->
+
+	</select>
+	<a href="#five" onclick="" class="w3-btn w3-grey">Continue</a>
+
+
+  </center>
+</div>
+
+<!--FIVE SUBPAGE-->
+<div id="five" class="page">
+	<div id="header2" class="w3-container w3-flat-green-sea">
+		<h1>Question 5</h1>
+	</div>
+	
+  <center>
+    
+    	<div id="content2" class="w3-container">
+        	<p>What is your preferred watering frequency for a plant?</p>    
+    	</div>
+	
+	<!--Form element. This allows for user input in HTML.-->
+	<label for="waterSelect">Select Watering Frequency:</label>
+	<select id="waterSelect">
+		<option value="low">Low</option>
+		<option value="moderate">Moderate</option>
+		<option value="high">High</option>
+		<option value="low to moderate">Low to Moderate</option>
+	  <!-- Options for each unique type -->
+	</select>
+	<a href="#finalpage" onclick="" class="w3-btn w3-grey">Continue</a>
+
+
+  </center>
+</div>
+
+
 <!--LAST SUBPAGE-->
 <div id="finalpage" class="page">
-	<div id="finalheader" class="w3-container w3-flat-carrot">
-		<h1>FINAL PAGE TITLE GOES HERE</h1>
+	<div id="finalheader" class="w3-container w3-flat-green-sea">
+		<h1>Results</h1>
 	</div>
 	
   <center>
     
 	  <div id="finalcontent" class="w3-container">
-		  <p id="endResults">FINAL PAGE CONTENT GOES HERE</p>
+		<label for="houseplantList">Here are some houseplants that may suit you:</label>
+		  <p id="houseplantList">Click the Button</p>
 	  </div>
   
-  <a class="w3-btn w3-black" onclick="exampleResultsFunction();">Click me!
+  <a class="w3-btn w3-black" onclick="filterHouseplants();">Click me!
     <br>
-    <img id="resultsButtonImg" src="https://i.imgur.com/rZOaHhx.png" width="30" alt="spongebob">
+    <!-- <img id="resultsButtonImg" src="https://i.imgur.com/rZOaHhx.png" width="30" alt="spongebob"> -->
   </a>
   <a href="#content" onclick="resetVariables();" class="w3-btn w3-black">Return to Home Page</a>
     
   </center>
 </div>
+
+	  
+	  
+	  
+	  
+<script>
+	function displayPlants(plants) {
+    var list = document.getElementById('houseplantList');
+    list.innerHTML = '';
+    plants.forEach(function(plant) {
+        var listItem = document.createElement('li');
+        listItem.textContent = plant.name;
+        list.appendChild(listItem);
+    });
+}
+
+	function filterHouseplants() {
+    var type = document.getElementById('typeSelect').value;
+    var careLevel = document.getElementById('careLevelSelect').value;
+
+    var filteredPlants;
+   
+        filteredPlants = houseplants.filter(function(plant) {
+            return (type === 'all' || plant.type.toLowerCase() === type) &&
+                   (careLevel === 'all' || plant.careLevel.toLowerCase() === careLevel);
+        });
+    
+
+    displayPlants(filteredPlants);
+}
+document.getElementById('typeSelect').addEventListener('change', filterHouseplants);
+document.getElementById('careLevelSelect').addEventListener('change', filterHouseplants);
+document.getElementById('lightSelect').addEventListener('change', filterHouseplants);
+document.getElementById('spaceSelect').addEventListener('change', filterHouseplants);
+document.getElementById('waterSelect').addEventListener('change', filterHouseplants);
+
+</script>	  
+	  
+	  
+	  
+	  
+
   
   
   
 <!--Footer!-->
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>YOUR NAME (or anything you want) HERE</p>
+<footer class="w3-bottom w3-container w3-flat-green-sea">
+	<p>Rishith Jaidi</p>
 </footer>
 </div>
 
